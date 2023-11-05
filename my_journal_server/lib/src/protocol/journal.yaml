@@ -1,0 +1,6 @@
+class: Journal
+table: journal
+fields:
+  title: String
+  body: String
+  date: DateTime

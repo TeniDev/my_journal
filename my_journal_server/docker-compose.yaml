@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:14.1
+    ports:
+      - '8090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: my_journal
+      POSTGRES_PASSWORD: "gP5c2qmi4pJkuy3chOhEGVaPpmWul9Xe"
+    volumes:
+      - my_journal_data:/var/lib/postgresql/data
+  redis:
+    image: redis:6.2.6
+    ports:
+      - '8091:6379'
+    command: redis-server --requirepass "O8qOPQQvYwy2PlNSxdRa9U_hu5pOjpRl"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+volumes:
+  my_journal_data:
